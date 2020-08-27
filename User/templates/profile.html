@@ -30,11 +30,10 @@
 	      </li>
 	    </ul>
 	    {% endif %}
-	  </div>
-	  <div id="Hello">
-	  	<span>Welcome, {{request.user}}</span>
-	  	<span><a href="{%url 'Logout'%}">Logout</a></span>
-	  	
+		  <div id="Hello">
+	  		<span>Welcome, {{request.user}}</span>
+	  		<span><a href="{%url 'Logout'%}">Logout</a></span>
+		  </div>
 	  </div>
 </nav>
 {% block content %}
