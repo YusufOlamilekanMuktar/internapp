@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Register</title>
+	<link rel="stylesheet" href="{% static 'css/bootstap.css'%} ">
+	<link rel="stylesheet" href="{% static 'css/bootstap.min.css'%} ">
+	<link rel="stylesheet" href="{% static 'css/register.css'%} ">
+
+</head>
+<body>
+	<div class="form">
+	<h2>Register</h2>
+	<form  action="" method="POST">
+	{% csrf_token %}
+	<div class="input">
+		<div class="inputBox">
+			{{form.username}}
+			<label for="UserName">Username</label>
+		</div>
+		<div class="inputBox">
+			{{form.email}}
+			<label>Email</label>	
+		</div>
+		<div class="inputBox">
+			{{form.password1}}
+			<label>Password</label>	
+		</div>
+		<div class="inputBox">
+			{{form.password2}}
+			<label>Password Confirmation</label>	
+		</div>
+		<div class="RemeberMe">
+			<input type="checkbox" onclick="myFunction()"> <span>Show Password</span>
+		</div>
+		<div class="inputBoxe">
+			<input type="submit" name="" value="Register">	
+		</div>
+	</div>
+	</form>
+	<div class="FormErrors">
+		{{form.errors}}
+	</div>
+
+	<p class="forget">Already have an account? <a href="{% url 'Login' %}">Login</a></p>
+</div>
+
+<script>
+		function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+	</script>
+	
+</body>
+</html>

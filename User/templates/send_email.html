@@ -1,0 +1,32 @@
+{% extends "profile.html" %}
+{% block content %}
+<style type="text/css" media="screen">
+.Emfield{
+	margin-top: 20px;
+	margin-bottom:30px; 
+}
+.MessageSuccess{
+	width: 50%;
+	background-color: #040404;
+	color: #FFFFFF;
+}
+</style>
+<div class="text-center Em">
+	<h2>Send Email</h2>
+</div>
+	<form class="form text-center" method="post">
+	    {% csrf_token %}
+	    <div class="Emfield">
+	    	<input type="email" name="email" placeholder="Email Address">
+	    </div>
+	    
+	    <div class="EmButton">
+	    	<button class="btn btn-primary" type="submit">Send</button>	
+	    </div>
+	</form>
+	<hr>
+	{% for i in messages %}    
+		<p class=" text center">{{i}}</p>    
+	{% endfor %}
+
+{% endblock content %}
